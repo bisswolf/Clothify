@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const registerUser = (values) => async (dispatch) => {
   try {
-    await axios.post("/register", values);
+    await axios.post("https://clothify-server.onrender.com/register", values);
     message.success("user registered successfully");
     setTimeout(() => {
       window.location.href = "/login";
@@ -16,7 +16,10 @@ export const registerUser = (values) => async (dispatch) => {
 
 export const loginUser = (values) => async (dispatch) => {
   try {
-    const user = await axios.post("/login", values);
+    const user = await axios.post(
+      "https://clothify-server.onrender.com/login",
+      values
+    );
     message.success("Login successfull");
 
     localStorage.setItem("user", JSON.stringify(user.data));

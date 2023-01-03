@@ -2,7 +2,9 @@ import axios from "axios";
 
 export const getAllClothes = () => async (dispatch) => {
   try {
-    const response = await axios.get("/products");
+    const response = await axios.get(
+      "https://clothify-server.onrender.com/products"
+    );
 
     dispatch({
       type: "GET_ALL_CLOTHES",
@@ -14,7 +16,9 @@ export const getAllClothes = () => async (dispatch) => {
 };
 export const getDetails = (id) => async (dispatch) => {
   try {
-    const response = await axios.get(`/products/${id}`);
+    const response = await axios.get(
+      `https://clothify-server.onrender.com/products/${id}`
+    );
     dispatch({
       type: "GET_DETAILS",
       payload: response.data,
