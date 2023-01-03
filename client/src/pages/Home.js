@@ -69,7 +69,7 @@ function Home() {
       </Carousel>
       <br />
       <br />
-      <Row justify="space-between">
+      <Row justify="space-around">
         {clothes ? (
           clothes.products.map((product) => {
             return (
