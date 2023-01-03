@@ -5,16 +5,19 @@ const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 const cloudinary = require("cloudinary").v2;
 const productRoutes = require("./routes/productRoutes");
+const userRoutes = require("./routes/userRoutes");
 
 dotenv.config();
 // const clothModel = require("./model/clothModel");
-const userModel = require("./model/userModel");
+// const userModel = require("./model/userModel");
 const app = express();
 const port = 5000;
 
 app.use(cors());
+app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/", productRoutes);
+app.use("/", userRoutes);
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
