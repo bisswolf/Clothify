@@ -69,11 +69,11 @@ function Home() {
       </Carousel>
       <br />
       <br />
-      <Row>
+      <Row justify="space-between">
         {clothes ? (
           clothes.products.map((product) => {
             return (
-              <Col span={3} key={product._id}>
+              <Col span={{ xs: 8, sm: 16, md: 24, lg: 32 }} key={product._id}>
                 <div>
                   <Link to={`/productinfo/${product._id}`}>
                     <Image
