@@ -9,13 +9,12 @@ const ProductInfo = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const location = useLocation();
-  console.log(location);
 
   const { clothes } = useSelector((state) => state.clothesDetailReducer);
   const cart = useSelector((state) => state.cartReducer);
   function onFinished(values) {
     const qty = values.Quantity;
-    console.log(qty);
+
     dispatch(addToCart(id, qty));
   }
 
@@ -25,7 +24,7 @@ const ProductInfo = () => {
 
   // const cloth = clothes.products.find((cloth) => cloth._id == id);
   const cloth = clothes;
-  console.log(cloth);
+
   return (
     <div>
       <div>
