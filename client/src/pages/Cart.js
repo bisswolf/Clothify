@@ -17,9 +17,9 @@ const Cart = () => {
   }
   const cartItems = localStorage.getItem("cartItems");
   const user = localStorage.getItem("user");
-  console.log(user);
+
   const cart = !cartItems ? [] : JSON.parse(cartItems);
-  console.log(cart);
+
   function getAmount() {
     let sum = 0;
     for (let i = 0; i < cart.length; i++) {

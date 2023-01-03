@@ -14,13 +14,12 @@ export const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case "CART_ADD_ITEM":
       const item = action.payload;
-      console.log(item);
-      console.log(state);
+
       const cartArray = [...state.cartItems];
       const itemExists = cartArray.find((x) => x.product === item.product)
         ? true
         : false;
-      console.log(itemExists);
+
       if (itemExists) {
         message.error("Item already exists");
         return {
