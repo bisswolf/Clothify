@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3640ffac.css",
+    "main.js": "/static/js/main.93b91511.js",
+    "static/media/Abalone Smile.otf": "/static/media/Abalone Smile.ad6c871bc40375e490f3.otf",
+    "index.html": "/index.html",
+    "main.3640ffac.css.map": "/static/css/main.3640ffac.css.map",
+    "main.93b91511.js.map": "/static/js/main.93b91511.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3640ffac.css",
+    "static/js/main.93b91511.js"
+  ]
+}
