@@ -1,4 +1,4 @@
-import { Button, Checkbox, Col, Form, Input, Row, Typography } from "antd";
+import { Button, Col, Form, Input, Row, Typography } from "antd";
 import { useDispatch } from "react-redux";
 import Navigation from "../components/Navigation";
 import { saveShippingAddress } from "../redux/actions/cartActions";
