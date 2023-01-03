@@ -14,13 +14,13 @@ const port = 5000;
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.resolve(__dirname, "./client/build")));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/", productRoutes);
 app.use("/", userRoutes);
 
-app.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+app.get("*", function (request, response) {
+  response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
 });
 
 app.listen(port, () => console.log(`listening on port ${port}!`));
