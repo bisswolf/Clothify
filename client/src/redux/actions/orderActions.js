@@ -8,7 +8,10 @@ export const createOrder = (order) => async (dispatch, getState) => {
     const user = JSON.parse(localStorage.getItem("user"));
     const reqData = { user, order };
     console.log(reqData);
-    const data = await axios.post(`/orders`, reqData);
+    const data = await axios.post(
+      `https://clothify-server.onrender.com/orders`,
+      reqData
+    );
     console.log(data);
 
     dispatch({
@@ -34,7 +37,9 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
       type: "ORDER_DETAILS_REQUEST",
     });
 
-    const { data } = await axios.get(`/orders/${id}`);
+    const { data } = await axios.get(
+      `https://clothify-server.onrender.com/orders/${id}`
+    );
     console.log(data);
     dispatch({
       type: "ORDER_DETAILS_SUCCESS",
