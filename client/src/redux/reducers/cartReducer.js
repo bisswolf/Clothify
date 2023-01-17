@@ -9,7 +9,19 @@ const getLocalCartData = () => {
     return JSON.parse(localCartData);
   }
 };
-const initialState = { cartItems: getLocalCartData(), shippingAddress: {} };
+const getLocalShippingData = () => {
+  let localShippingData = localStorage.getItem("shippingAddress");
+
+  if (!localShippingData) {
+    return {};
+  } else {
+    return JSON.parse(localShippingData);
+  }
+};
+const initialState = {
+  cartItems: getLocalCartData(),
+  shippingAddress: getLocalShippingData(),
+};
 export const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case "CART_ADD_ITEM":

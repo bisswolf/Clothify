@@ -1,14 +1,14 @@
 import { Button, Col, Form, Image, Row, Select } from "antd";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, Link, useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import { getDetails } from "../redux/actions/productActions";
 import { addToCart } from "../redux/actions/cartActions";
+
 const ProductInfo = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const location = useLocation();
 
   const { clothes } = useSelector((state) => state.clothesDetailReducer);
   const cart = useSelector((state) => state.cartReducer);
@@ -22,7 +22,6 @@ const ProductInfo = () => {
     dispatch(getDetails(id));
   }, [dispatch, id]);
 
-  // const cloth = clothes.products.find((cloth) => cloth._id == id);
   const cloth = clothes;
 
   return (
