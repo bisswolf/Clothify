@@ -9,7 +9,7 @@ const Checkout = () => {
   function onFinish(values) {
     console.log(values);
     dispatch(saveShippingAddress(values));
-    // window.location.href = "/payment";
+    window.location.href = "/placeorder";
   }
   return (
     <div>
@@ -63,12 +63,12 @@ const Checkout = () => {
             </Form.Item>
 
             <Form.Item
-              label="Country"
-              name="country"
+              label="State"
+              name="state"
               rules={[
                 {
                   required: true,
-                  message: "Please enter country",
+                  message: "Please enter state",
                 },
               ]}
             >

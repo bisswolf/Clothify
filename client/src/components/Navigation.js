@@ -1,6 +1,5 @@
 import { Navbar, Nav } from "rsuite";
 import HomeIcon from "@rsuite/icons/legacy/Home";
-import CogIcon from "@rsuite/icons/legacy/Cog";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 const Navigation = () => {
   const isLoggenIn = JSON.parse(localStorage.getItem("user"));

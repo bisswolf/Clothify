@@ -11,7 +11,7 @@ const { Meta } = Card;
 // import img3 from "../images/background3.jpg";
 // import img4 from "../images/background4.jpg";
 const contentStyle1 = {
-  height: "11em",
+  height: "21em",
   color: "#fff",
   lineHeight: "160px",
   textAlign: "center",
@@ -20,14 +20,14 @@ const contentStyle1 = {
   backgroundRepeat: "no-repeat",
 };
 const contentStyle2 = {
-  height: "11em",
+  height: "21em",
   color: "#fff",
   lineHeight: "160px",
   textAlign: "center",
   backgroundImage: "url('/images/background2.jpg')",
 };
 const contentStyle3 = {
-  height: "11em",
+  height: "21em",
   color: "#fff",
   lineHeight: "160px",
   textAlign: "center",
@@ -35,7 +35,7 @@ const contentStyle3 = {
   backgroundRepeat: "no-repeat",
 };
 const contentStyle4 = {
-  height: "11em",
+  height: "21em",
   color: "#fff",
   lineHeight: "160px",
   textAlign: "center",
@@ -53,20 +53,24 @@ function Home() {
   return (
     <div>
       <Navigation />
-      <Carousel autoplay>
-        <div>
-          <h3 style={contentStyle1} />
-        </div>
-        <div>
-          <h3 style={contentStyle2} />
-        </div>
-        <div>
-          <h3 style={contentStyle3} />
-        </div>
-        <div>
-          <h3 style={contentStyle4} />
-        </div>
-      </Carousel>
+      <Row style={{ display: "block" }}>
+        <Col span={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+          <Carousel autoplay>
+            <div>
+              <img alt="" src="" style={contentStyle1} />
+            </div>
+            <div>
+              <img alt="" src="" style={contentStyle2} />
+            </div>
+            <div>
+              <img alt="" src="" style={contentStyle3} />
+            </div>
+            <div>
+              <img alt="" src="" style={contentStyle4} />
+            </div>
+          </Carousel>
+        </Col>
+      </Row>
       <br />
       <br />
       <Row justify="space-around">
