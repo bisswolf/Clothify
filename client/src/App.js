@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import "./App.css";
 import Home from "./pages/Home";
@@ -10,14 +10,25 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
-import Payment from "./pages/Payment";
+import StripeContainer from "./components/StripeContainer";
+import PlaceOrder from "./pages/PlaceOrder";
+import axios from "axios";
+import OrderSuccess from "./pages/OrderSuccess";
+import MyOrders from "./pages/MyOrders";
 
 function App() {
   const dispatch = useDispatch();
+  const [stripeApiKey, setStripeApiKey] = useState("");
   useEffect(() => {
     dispatch(getAllClothes());
   }, [dispatch]);
 
+  async function getStripeApiKey() {
+    const data = await axios.get("/stripeapikey");
+
+    setStripeApiKey(data.data.stripeApiKey);
+  }
+  getStripeApiKey();
   const router = createBrowserRouter([
     {
       path: "/",
@@ -42,6 +53,23 @@ function App() {
     {
       path: "/checkout",
       element: <Checkout />,
+    },
+    {
+      path: "/placeorder",
+      element: <PlaceOrder />,
+    },
+
+    {
+      path: "/payment",
+      element: <StripeContainer />,
+    },
+    {
+      path: "/payment/success",
+      element: <OrderSuccess />,
+    },
+    {
+      path: "/myorders",
+      element: <MyOrders />,
     },
   ]);
   return (
