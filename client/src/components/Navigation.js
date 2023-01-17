@@ -23,7 +23,7 @@ const Navigation = () => {
       <Nav pullRight>
         {isLoggenIn ? (
           <>
-            <Nav.Item>{isLoggenIn.username}</Nav.Item>
+            <Nav.Item href="/myorders">{isLoggenIn.username}</Nav.Item>
             <Nav.Item onClick={logout}>Logout</Nav.Item>
             <Nav.Item
               href="/cart"

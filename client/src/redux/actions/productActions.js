@@ -2,7 +2,9 @@ import axios from "axios";
 
 export const getAllClothes = () => async (dispatch) => {
   try {
-    const response = await axios.get("http://localhost:5000/products");
+    const response = await axios.get(
+      "https://clothify-server.onrender.com/products"
+    );
 
     dispatch({
       type: "GET_ALL_CLOTHES",

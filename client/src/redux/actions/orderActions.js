@@ -60,7 +60,10 @@ export const payOrder =
         type: "ORDER_PAY_REQUEST",
       });
 
-      const { data } = await axios.put(`/orders/${orderId}/pay`, paymentResult);
+      const { data } = await axios.put(
+        `https://clothify-server.onrender.com/orders/${orderId}/pay`,
+        paymentResult
+      );
 
       dispatch({
         type: "ORDER_PAY_SUCCESS",
@@ -85,7 +88,10 @@ export const listMyOrders = () => async (dispatch, getState) => {
     });
     const user = JSON.parse(localStorage.getItem("user"));
 
-    const { data } = await axios.post(`/myorders`, user);
+    const { data } = await axios.post(
+      `https://clothify-server.onrender.com/myorders`,
+      user
+    );
     dispatch({
       type: "ORDER_LIST_MY_SUCCESS",
       payload: data,

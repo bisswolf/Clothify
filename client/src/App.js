@@ -18,17 +18,11 @@ import MyOrders from "./pages/MyOrders";
 
 function App() {
   const dispatch = useDispatch();
-  const [stripeApiKey, setStripeApiKey] = useState("");
+
   useEffect(() => {
     dispatch(getAllClothes());
   }, [dispatch]);
 
-  async function getStripeApiKey() {
-    const data = await axios.get("/stripeapikey");
-
-    setStripeApiKey(data.data.stripeApiKey);
-  }
-  getStripeApiKey();
   const router = createBrowserRouter([
     {
       path: "/",
