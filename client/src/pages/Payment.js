@@ -43,7 +43,10 @@ const Payment = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("/payment/process", paymentData);
+      const response = await axios.post(
+        "https://clothify-server.onrender.com/payment/process",
+        paymentData
+      );
 
       const client_secret = response.data.client_secret;
 
